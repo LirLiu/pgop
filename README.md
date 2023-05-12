@@ -4,6 +4,16 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## Global Css
 Use the [normalize.css](https://github.com/necolas/normalize.css)
+
+## css预处理器
+use the [sass with css module](https://sass-lang.com/documentation/syntax)
+
+## router
+use the [react-router-dom@6](https://reactrouter.com/en/6.11.1)
+
+## UI
+use the [antd](https://ant.design/components/overview-cn/)
+
 ## Available Scripts
 
 In the project directory, you can run:
