@@ -1,20 +1,144 @@
+// home
+.home {
+  // width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
 // 头部
 .header {
-  width: 100%;
-  height: 64px;
-  background-color: red;
+  width: calc(100% - 48px);
+  height: 32px;
+  background-color: #161b22;
+
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+
+  padding: 16px 24px;
+
+  .h_icon {
+    margin-right: 24px;
+    a {
+      text-decoration: none;
+      display: inline-block;
+      height: 32px;
+      &:hover {
+        opacity: 0.8;
+      }
+    }
+    img {
+      height: 32px;
+    }
+  }
+
+  .h_menu {
+    a {
+      text-decoration: none;
+      margin-right: 16px;
+      color: #ffffffb3;
+      &:hover {
+        opacity: 0.7;
+      }
+    }
+  }
+
+  .h_retrieval {
+    height: 32px;
+    display: flex;
+    margin: 0 16px;
+
+    .h_searchBtn,
+    .h_questionBtn {
+      background: transparent;
+      border: 1px solid #ffffffb6;
+      border-radius: 8px;
+
+      color: #ffffffb3;
+      font-size: 14px;
+      cursor: pointer;
+
+      &:hover {
+        opacity: 0.8;
+      }
+    }
+
+    .h_searchBtn {
+      width: 320px;
+
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      margin-right: 16px;
+
+      > div {
+        height: 20px;
+        width: 20px;
+        &:first-child {
+          padding-right: 12px;
+        }
+        &:last-child {
+          margin-left: auto;
+        }
+      }
+    }
+
+    .h_questionBtn {
+      padding: 0 12px;
+    }
+  }
+
+  .h_userInfo {
+    margin-left: auto;
+    > div {
+      display: inline-block;
+      width: 32px;
+      height: 32px;
+      margin-left: 16px;
+      cursor: pointer;
+    }
+  }
 }
 
 // 主体
 .main {
-  width: 100%;
-  min-height: 300px;
+  flex-grow: 1;
+
   background-color: goldenrod;
 }
 
 // 页脚
 .footer {
-  width: 100%;
-  height: 116px;
-  background-color: darkcyan;
+  width: calc(100% - 140px);
+  height: 114px;
+  background-color: #161b22;
+  color: #ffffffb3;
+
+  padding: 0px 70px;
+  display: flex;
+  align-items: center;
+
+  > div {
+    margin-right: 16px;
+    &:last-child {
+      margin: 0;
+    }
+    > img {
+      height: 32px;
+    }
+    > a {
+      text-decoration: none;
+      margin-left: 16px;
+      color: #ffffffb3;
+
+      &:hover {
+        opacity: 0.8;
+      }
+    }
+  }
+
+  > span {
+    display: inline-block;
+    margin-right: 24px;
+  }
 }

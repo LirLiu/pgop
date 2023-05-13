@@ -6,11 +6,11 @@ import HomeMain from "./HomeMain";
 
 const Home = () => {
   return (
-    <>
+    <div className={styles.home}>
       <HomeHeader />
       <HomeMain />
       <HomeFooter />
-    </>
+    </div>
   )
 }
 export default Home;
