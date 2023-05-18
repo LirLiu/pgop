@@ -2,16 +2,8 @@ import { useState } from "react";
 import styles from "./component.module.scss";
 import Tag from "./Tag";
 
-
-const detail = {
-  title: "标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题",
-  type: "font-end,back-end,ai",
-  content: '内容内容内容内容内容内容容内容内容内容内容内容内容内容内容内容内容内容内内容内容内容内容内容内容内容内容',
-  auth: 'lir',
-
-}
-
-const Card = () => {
+const Card = (props) => {
+  const {detail} = props;
 
   return (
     <div className={styles.card}>

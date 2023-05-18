@@ -2,6 +2,7 @@ import { useState, useCallback, useEffect, useMemo, useContext } from "react";
 import styles from './home.module.scss'
 import Tab from '../../components/Tab'
 import Card from "../../components/Card";
+import WritingCenter from "./components/WritingCenter";
 import { ThemeContext } from "../../utils/Contexts";
 import { get } from '../../utils/fetch'
 
@@ -24,29 +25,21 @@ const tabListNoTitle = [
 const HomeMain = () => {
   const [activeTabKey, setActiveTabKey] = useState('recommend');
   const { theme, setTheme } = useContext(ThemeContext)
-  const [data, setData] = useState([])
+  const [articles, setArticles] = useState([])
 
   useEffect(() => {
-    console.log(process.env,'adsfaodfnasod')
     get('/api/articles')
     .then(res=>{
-      console.log(res,'res')
-      setData(res)
+      setArticles(res)
     }).catch(err => {
       throw new Error(err)
     })
-    console.log(theme)
   }, [])
 
-  useEffect(() => {
-    console.log(data,'data')
-  },[data])
-
-  
   const contentListNoTitle = {
-    concern: <p>article content</p>,
-    recommend: <Card></Card>,
-    hot: <p>project content</p>,
+    concern: <div>{articles.map(item => <Card key={item.id} detail={item}></Card>)}</div>,
+    recommend: <div>{articles.map(item => <Card key={item.id} detail={item}></Card>)}</div>,
+    hot: <div>{articles.map(item => <Card key={item.id} detail={item}></Card>)}</div>,
   };
   const handledivClick = () => {
     setTheme(`${Math.random()}`)
@@ -78,13 +71,10 @@ const HomeMain = () => {
         {/* {jieguo} */}
       </div>
       <div className={styles.m_right} onClick={handledivClick}>
-        <div>2</div>
-        <div>2</div>
-        <div>2</div>
-        <div>2</div>
-        <div>2</div>
-        <div>2</div>
-        <div>2</div>
+        <WritingCenter/>
+        <div>轮播小类分类板块</div>
+        <div>与我相关的页面：如我的收藏，我关注的问题，版权服务中心等等</div>
+        <div>版权信息内容</div>
       </div>
     </div>
   )

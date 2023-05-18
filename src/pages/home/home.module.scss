@@ -117,7 +117,13 @@
     float: right;
     width: 284px;
     margin-left: 16px;
-    background-color: var(--main-bg-color);
+    > div {
+      border-radius: 2px;
+      box-shadow: 0 1px 3px hsla(0, 0%, 7%, 0.1);
+      background-color: var(--main-bg-color);
+      margin-bottom: 16px;
+      padding: 12px;
+    }
   }
   &::after {
     content: '';
