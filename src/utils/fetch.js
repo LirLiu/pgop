@@ -2,22 +2,13 @@
 export async function request(url, options) {
   try {
     const response = await fetch(url, options)
-    console.log(
-      response.status,
-      response.statusText,
-      response.ok,
-      '打印返回状态码及状态文本'
-    )
+    console.log(response, '打印response所有数据')
     if (response.ok) {
       const jsonRes = await response.json()
-      console.log(jsonRes,jsonRes.code, '打印此时状态码')
-      if (jsonRes.code >= 200 && jsonRes.code < 300) {
-        return jsonRes
-      } else {
-        throw new Error(
-          '返回code：' + jsonRes.code + '，错误信息：' + jsonRes.code
-        )
-      }
+      console.log(jsonRes, '打印此时json化数据')
+      return jsonRes
+    } else {
+      throw new Error('错误信息:' + response.status, response.statusText)
     }
   } catch (error) {
     throw new Error('错误信息:' + error)
