@@ -1,0 +1,56 @@
+// card
+.card {
+  padding: 12px 16px;
+  border-bottom: 1px solid #f0f2f7;
+  .c_header {
+    // height: 32px;
+    // line-height: 32px;
+    > a {
+      font-size: 18px;
+      line-height: 1.5;
+      font-weight: bold;
+      text-decoration: none;
+    }
+  }
+  .c_content {
+    margin-top: 12px;
+    font-size: 16px;
+    line-height: 1.5;
+
+    overflow: hidden; /* 移除隐藏 */
+    text-overflow: ellipsis; /* 省略号 */
+    white-space: nowrap; /* 禁止文字自动换行 */
+  }
+}
+
+// tag
+.tag_visible {
+  font-size: 12px;
+  color: #f68b83;
+  background-color: #f68b8333;
+  margin-right: 5px;
+  padding: 3px 5px;
+  border-radius: 2px;
+}
+
+// tab
+.tab {
+  display: flex;
+  height: 64px;
+  align-items: center;
+  border-bottom: 1px solid #f0f2f7;
+
+  > a {
+    margin: 0 22px;
+    text-decoration: none;
+    &:hover {
+      color: var(--hover-link-color);
+    }
+  }
+  .t_light {
+    color: var(--light-text-color);
+  }
+  .t_dark {
+    color: var(--text-color);
+  }
+}

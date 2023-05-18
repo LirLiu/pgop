@@ -1,9 +1,7 @@
 // home
 .home {
-  // width: 100%;
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
+  width: max(1024px, 100%);
+  background-color: var(--bg-color);
 }
 // 头部
 .header {
@@ -102,9 +100,30 @@
 
 // 主体
 .main {
-  flex-grow: 1;
+  width: 1000px;
+  padding: 12px;
+  margin-inline: auto;
+  .m_left {
+    float: left;
+    width: 700px;
+    min-height: calc(100vh - 88px);
+    height: auto;
 
-  background-color: goldenrod;
+    border-radius: 2px;
+    box-shadow: 0 1px 3px hsla(0, 0%, 7%, 0.1);
+    background-color: var(--main-bg-color);
+  }
+  .m_right {
+    float: right;
+    width: 284px;
+    margin-left: 16px;
+    background-color: var(--main-bg-color);
+  }
+  &::after {
+    content: '';
+    display: block;
+    clear: both;
+  }
 }
 
 // 页脚
