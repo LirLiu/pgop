@@ -1,6 +1,5 @@
 import { useState, useMemo } from "react";
 import styles from "./component.module.scss";
-import { keyboard } from "@testing-library/user-event/dist/keyboard";
 
 const INVISIBLE = ''
 const FONT_END = 'font-end'

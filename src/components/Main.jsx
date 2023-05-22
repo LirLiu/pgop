@@ -1,3 +1,4 @@
+// 采取全局样式，非组件封装方法
 import { useState, useCallback, useEffect, useMemo, useContext } from "react";
 import styles from './home.module.scss'
 import Tab from '../../components/Tab'
@@ -41,51 +42,26 @@ const HomeMain = (props) => {
 
     get('/api/articles')
       .then(res => {
+        
         setArticles(res)
       }).catch(err => {
         throw new Error(err)
       })
   }, [])
 
-  const contentListNoTitle = {
-    concern: <div>{articles.map(item => <Card key={item.id} detail={item}></Card>)}</div>,
-    recommend: <div>{articles.map(item => <Card key={item.id} detail={item}></Card>)}</div>,
-    hot: <div>{articles.map(item => <Card key={item.id} detail={item}></Card>)}</div>,
-  };
-  const handledivClick = () => {
-    setTheme(`${Math.random()}`)
-    console.log(theme)
-  }
-  const onTabChange = useCallback((key) => {
-    console.log('wogoujianl')
-    setTheme(`night${1 + Math.random()}`)
-    setActiveTabKey(key);
-  }, [activeTabKey])
 
-  const farmarJisuan = (key) => {
-    console.log('hahahahahhahaha')
-    return key === 'hot' ? '热榜' : '其他'
-  }
-  const jieguo = useMemo(() => {
-    return farmarJisuan(activeTabKey)
-  }, [activeTabKey])
   return (
-    <div className='main-body'>
-      <div className='body-left'>
-        <Tab
-          tabList={tabListNoTitle}
-          activeTabKey={activeTabKey}
-          onTabChange={onTabChange}
-        >
-        </Tab>
-        {contentListNoTitle[activeTabKey]}
-        {/* {jieguo} */}
+    <div className={styles.main}>
+      <div className={styles.m_left}>
+        {
+          props.chidrenLeft
+        }
+        
       </div>
-      <div className='body-right'>
-        <WritingCenter />
-        <div>轮播小类分类板块</div>
-        <div>与我相关的页面：如我的收藏，我关注的问题，版权服务中心等等</div>
-        <div>版权信息内容</div>
+      <div className={styles.m_right} onClick={handledivClick}>
+        {
+          props.childrenRight
+        }
       </div>
     </div>
   )
@@ -95,4 +71,13 @@ const mapStateToProps = (state) => ({
   user: state.user
 })
 
+
+const App = () => {
+  
+  return (<div>
+    <HomeMain>
+
+    </HomeMain>
+  </div>)
+}
 export default connect(mapStateToProps)(HomeMain)

@@ -1,7 +1,6 @@
 import { useState } from "react";
 import styles from './home.module.scss'
 import { Link } from "react-router-dom";
-import Promonkey from '../../assets/images/promonkey.jpg'
 
 const DirectLink = [
   {
@@ -25,7 +24,7 @@ const HomeFooter = () => {
 
   return (
     <div className={styles.footer}>
-      <div><img src={Promonkey} alt="程序猿" /></div>
+      {/* <div><img src={Promonkey} alt="程序猿" /></div> */}
       <span>© 2023 , pgop Inc.</span>
       <div>
         {

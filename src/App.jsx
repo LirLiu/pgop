@@ -7,6 +7,10 @@ import {
 } from 'react-router-dom'
 import Home from './pages/home/Home'
 
+import { store } from './store/index'
+import { Provider } from 'react-redux'
+
+
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -16,7 +20,11 @@ const router = createBrowserRouter(
 
 function App() {
   return (
-    <RouterProvider router={router} />
+    <Provider store={store}>
+      <main className='main'>
+        <RouterProvider router={router} />
+      </main>
+    </Provider>
   );
 }
 

@@ -1,3 +1,88 @@
+// Header
+.header {
+  width: calc(100% - 48px);
+  height: 32px;
+  background-color: #161b22;
+
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+
+  padding: 16px 24px;
+
+  .h_icon {
+    margin-right: 24px;
+    font-size: 24px;
+  }
+
+  .h_menu {
+    a {
+      text-decoration: none;
+      margin-right: 16px;
+      color: #ffffffb3;
+      &:hover {
+        opacity: 0.7;
+      }
+    }
+  }
+
+  .h_retrieval {
+    height: 32px;
+    display: flex;
+    margin: 0 16px;
+
+    .h_searchBtn,
+    .h_questionBtn {
+      background: transparent;
+      border: 1px solid #ffffffb6;
+      border-radius: 8px;
+
+      color: #ffffffb3;
+      font-size: 14px;
+      cursor: pointer;
+
+      &:hover {
+        opacity: 0.8;
+      }
+    }
+
+    .h_searchBtn {
+      width: 320px;
+
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      margin-right: 16px;
+
+      > div {
+        height: 20px;
+        width: 20px;
+        &:first-child {
+          padding-right: 12px;
+        }
+        &:last-child {
+          margin-left: auto;
+        }
+      }
+    }
+
+    .h_questionBtn {
+      padding: 0 12px;
+    }
+  }
+
+  .h_userInfo {
+    margin-left: auto;
+    > div {
+      display: inline-block;
+      width: 32px;
+      height: 32px;
+      margin-left: 16px;
+      cursor: pointer;
+    }
+  }
+}
+
 // card
 .card {
   padding: 12px 16px;

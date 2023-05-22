@@ -1,8 +1,6 @@
 import { useState } from "react";
-import styles from './home.module.scss'
-import { Button } from 'antd'
+import styles from './component.module.scss'
 import { Link } from 'react-router-dom'
-import Promonkey from '../../assets/images/promonkey.jpg'
 
 
 const TOP_HEADERS = [
@@ -28,11 +26,11 @@ const TOP_HEADERS = [
   },
 ]
 
-const HomeHeader = () => {
+const Header = () => {
 
   return (
     <header className={styles.header}>
-      <div className={styles.h_icon}><a href="/"><img src={Promonkey} alt='程序猿' /></a></div>
+      <div className={styles.h_icon}>程序猿</div>
       <nav className={styles.h_menu}>
         {
           TOP_HEADERS.map(item => <Link to={item.link} key={item.en_title} >{item.title}</Link>)
@@ -75,4 +73,4 @@ const HomeHeader = () => {
   )
 }
 
-export default HomeHeader
+export default Header

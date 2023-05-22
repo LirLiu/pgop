@@ -1,0 +1,77 @@
+// 浏览器默认样式增添
+:root {
+  --bg-color: #f5f5f5; /* 浅色主题背景色 */
+  --text-color: #333; /* 浅色主题字体颜色 */
+  --bg-color-dark: #333; /* 深色主题背景色 */
+  --text-color-dark: #f5f5f5; /* 深色主题字体颜色 */
+  --main-bg-color-dark: #0d1117;
+  --main-bg-color: #fff;
+
+  --light-text-color: #056de8;
+  --hover-link-color: #4682b4;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg-color: var(--bg-color-dark);
+    --text-color: var(--text-color-dark);
+    --main-bg-color: var(--main-bg-color-dark);
+  }
+}
+
+html {
+  color-scheme: light dark;
+}
+
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+img,
+svg,
+video {
+  max-width: 100%;
+  display: block;
+  border-style: none;
+}
+
+// 项目样式增添
+.main {
+  width: max(1024px, 100%);
+  background-color: var(--bg-color);
+}
+
+.main-body {
+  width: 1000px;
+  padding: 12px;
+  margin-inline: auto;
+  .body-left {
+    float: left;
+    width: 700px;
+    min-height: calc(100vh - 88px);
+    height: auto;
+
+    border-radius: 2px;
+    box-shadow: 0 1px 3px hsla(0, 0%, 7%, 0.1);
+    background-color: var(--main-bg-color);
+  }
+  .body-right {
+    float: right;
+    width: 284px;
+    margin-left: 16px;
+
+    > div {
+      border-radius: 2px;
+      box-shadow: 0 1px 3px hsla(0, 0%, 7%, 0.1);
+      background-color: var(--main-bg-color);
+      margin-bottom: 16px;
+      padding: 12px;
+    }
+  }
+  &::after {
+    content: '';
+    display: block;
+    clear: both;
+  }
+}
