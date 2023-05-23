@@ -2,61 +2,61 @@
   "articles": [
     {
       "id": 1,
-      "type":"font-end",
+      "type": "font-end",
       "title": "本文标题有很多中形式，这是标题1",
       "content": "内容有哪些呢，这是主要内容1,改内容长度还是有点不够啊，我该怎么办呢，当然是继续凑字数啦！"
     },
     {
       "id": 2,
-      "type":"font-end",
+      "type": "font-end",
       "title": "本文标题有很多中形式，这是标题2",
       "content": "内容有哪些呢，这是主要内容2,改内容长度还是有点不够啊，我该怎么办呢，当然是继续凑字数啦！"
     },
     {
       "id": 3,
-      "type":"font-end,back-end",
+      "type": "font-end,back-end",
       "title": "本文标题有很多中形式，这是标题3",
       "content": "内容有哪些呢，这是主要内容3,改内容长度还是有点不够啊，我该怎么办呢，当然是继续凑字数啦！"
     },
     {
       "id": 4,
-      "type":"font-end,ai",
+      "type": "font-end,ai",
       "title": "本文标题有很多中形式，这是标题4",
       "content": "内容有哪些呢，这是主要内容4,改内容长度还是有点不够啊，我该怎么办呢，当然是继续凑字数啦！"
     },
     {
       "id": 5,
-      "type":"font-end",
+      "type": "font-end",
       "title": "本文标题有很多中形式，这是标题5",
       "content": "内容有哪些呢，这是主要内容5,改内容长度还是有点不够啊，我该怎么办呢，当然是继续凑字数啦！"
     },
     {
       "id": 6,
-      "type":"",
+      "type": "",
       "title": "本文标题有很多中形式，这是标题6",
       "content": "内容有哪些呢，这是主要内容6,改内容长度还是有点不够啊，我该怎么办呢，当然是继续凑字数啦！"
     },
     {
       "id": 7,
-      "type":"",
+      "type": "",
       "title": "本文标题有很多中形式，这是标题7",
       "content": "内容有哪些呢，这是主要内容7,改内容长度还是有点不够啊，我该怎么办呢，当然是继续凑字数啦！"
     },
     {
       "id": 8,
-      "type":"back-end",
+      "type": "back-end",
       "title": "本文标题有很多中形式，这是标题8",
       "content": "内容有哪些呢，这是主要内容8,改内容长度还是有点不够啊，我该怎么办呢，当然是继续凑字数啦！"
     },
     {
       "id": 9,
-      "type":"back-end,ai",
+      "type": "back-end,ai",
       "title": "本文标题有很多中形式，这是标题9",
       "content": "内容有哪些呢，这是主要内容9,改内容长度还是有点不够啊，我该怎么办呢，当然是继续凑字数啦！"
     },
     {
       "id": 10,
-      "type":"",
+      "type": "",
       "title": "本文标题有很多中形式，这是标题10",
       "content": "内容有哪些呢，这是主要内容10,改内容长度还是有点不够啊，我该怎么办呢，当然是继续凑字数啦！"
     }
@@ -76,6 +76,34 @@
       "id": 3,
       "body": "some content",
       "articleId": 2
+    }
+  ],
+  "links": [
+    {
+      "id": 0,
+      "class": "前端",
+      "en_class": "frontend",
+      "concern": [
+        {
+          "id": 0,
+          "name": "React中文官方文档",
+          "link": "https://react.docschina.org/",
+          "en_name": "React_zh_offical"
+        }
+      ]
+    },
+    {
+      "id": 1,
+      "class": "后端",
+      "en_class": "backend",
+      "concern": [
+        {
+          "id": 0,
+          "name": "React官方英文文档",
+          "link": "https://react.docschina.org/",
+          "en_name": "React_en_offical"
+        }
+      ]
     }
   ]
 }

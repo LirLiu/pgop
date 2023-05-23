@@ -67,6 +67,10 @@ video {
       background-color: var(--main-bg-color);
       margin-bottom: 16px;
       padding: 12px;
+      &:last-child{
+        box-shadow: none;
+        background-color: transparent;
+      }
     }
   }
   &::after {

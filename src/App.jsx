@@ -4,18 +4,16 @@ import {
   Routes,
   Route,
 } from 'react-router-dom'
-import Home from './pages/home/Home'
+import Nest from './pages/nest/Nest'
 import FontEnd from './pages/fontend/FontEnd'
-import HomeMain from './pages/home/HomeMain'
 
 
 function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Home />}>
-          <Route index element={<HomeMain />}></Route>
-          <Route path='fontend' element={<FontEnd />}></Route>
+        <Route path="/" element={<Nest />}>
+          <Route path='frontend' element={<FontEnd />}></Route>
         </Route>
         <Route path='*' element={
           <main style={{

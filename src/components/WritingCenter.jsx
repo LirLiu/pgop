@@ -1,5 +1,5 @@
 import { useState } from "react";
-import styles from './homeComponent.module.scss'
+import styles from './component.module.scss'
 
 
 const WritingCenter = (props) => {

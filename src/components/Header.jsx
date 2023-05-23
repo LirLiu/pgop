@@ -12,7 +12,7 @@ const TOP_HEADERS = [
   {
     title: '前端',
     en_title: 'Front-end',
-    link: '/fontend'
+    link: '/frontend'
   },
   {
     title: '后端',

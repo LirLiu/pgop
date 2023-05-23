@@ -1,5 +1,6 @@
-import { createStore } from 'redux'
-import { UPDATEUSER } from './action'
+import thunk from 'redux-thunk'
+import { createStore, applyMiddleware, combineReducers } from 'redux'
+import { UPDATEUSER, GETFOOTERLINKES } from './action'
 
 const initialState = {
   user: {
@@ -7,16 +8,21 @@ const initialState = {
     name: 'lir',
     age: 24,
   },
+  links: [],
 }
 
-function reducer(state = initialState, action) {
+function presentReducer(state = initialState, action) {
   switch (action.type) {
     case UPDATEUSER:
-      return {...state.user,...action.payload}
+      return { ...state.user, ...action.payload }
+    case GETFOOTERLINKES:
+      console.log(action.payload, 'action payload')
+      return { ...state.links, links: action.payload }
 
     default:
-      return state;
+      return state
   }
 }
-export const store = createStore(reducer)
 
+const rootReducer = combineReducers({ present: presentReducer })
+export const store = createStore(rootReducer, applyMiddleware(thunk))

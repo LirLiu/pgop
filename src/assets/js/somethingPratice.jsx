@@ -1,8 +1,7 @@
 import { useState, useCallback, useEffect, useMemo, useContext } from "react";
-import styles from './home.module.scss'
 import Tab from '../../components/Tab'
 import Card from "../../components/Card";
-import WritingCenter from "./components/WritingCenter";
+// import WritingCenter from "./components/WritingCenter";
 import { ThemeContext } from "../../utils/Contexts";
 import { get } from '../../utils/fetch'
 import { connect } from "react-redux";
@@ -82,7 +81,7 @@ const HomeMain = (props) => {
         {/* {jieguo} */}
       </div>
       <div className='body-right'>
-        <WritingCenter />
+        {/* <WritingCenter /> */}
         <div>轮播小类分类板块</div>
         <div>与我相关的页面：如我的收藏，我关注的问题，版权服务中心等等</div>
         <div>版权信息内容</div>
