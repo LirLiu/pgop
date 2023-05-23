@@ -1,23 +1,18 @@
 import thunk from 'redux-thunk'
 import { createStore, applyMiddleware, combineReducers } from 'redux'
-import { UPDATEUSER, GETFOOTERLINKES } from './action'
+import { GETFOOTERLINKES, GETARTICLES } from './action'
 
 const initialState = {
-  user: {
-    id: 0,
-    name: 'lir',
-    age: 24,
-  },
   links: [],
+  articles: [],
 }
 
 function presentReducer(state = initialState, action) {
   switch (action.type) {
-    case UPDATEUSER:
-      return { ...state.user, ...action.payload }
     case GETFOOTERLINKES:
-      console.log(action.payload, 'action payload')
-      return { ...state.links, links: action.payload }
+      return { ...state, links: action.payload }
+    case GETARTICLES:
+      return { ...state, articles: action.payload }
 
     default:
       return state

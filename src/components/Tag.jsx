@@ -15,7 +15,6 @@ const AI_LABEL = '人工智能'
 
 const Tag = (props) => {
   const { type } = props
-console.log(type)
   const tagName = useMemo(() => {
     switch (type) {
       case INVISIBLE:

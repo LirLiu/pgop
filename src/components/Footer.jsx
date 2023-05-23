@@ -5,12 +5,13 @@ import { getFooterlinkes } from "../store/action";
 import { useEffect } from "react";
 
 const Footer = (props) => {
-  const { dispatch,links } = props
+  const { dispatch, links } = props
   const location = useLocation();
-  console.log("location 参数",links, location);
+
   useEffect(() => {
     dispatch(getFooterlinkes());
-  },[]) 
+  }, [])
+
   return (
     <div>
       <span>程序猿</span>

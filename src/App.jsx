@@ -5,6 +5,7 @@ import {
   Route,
 } from 'react-router-dom'
 import Nest from './pages/nest/Nest'
+import Home from './pages/home/Home'
 import FontEnd from './pages/fontend/FontEnd'
 
 
@@ -13,6 +14,7 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Nest />}>
+          <Route index element={<Home />}></Route>
           <Route path='frontend' element={<FontEnd />}></Route>
         </Route>
         <Route path='*' element={
