@@ -7,3 +7,4 @@ const FontEnd = (props) => {
     </div>
   )
 }
+export default FontEnd

@@ -4,15 +4,18 @@ import Header from "../../components/Header";
 import HomeFooter from "./HomeFooter";
 import HomeMain from "./HomeMain";
 import { ThemeContext } from "../../utils/Contexts";
+import { Outlet } from "react-router-dom";
 
 const Home = () => {
   const [theme, setTheme] = useState('light')
   return (
     <ThemeContext.Provider value={{ theme, setTheme }}>
-      <>
+      <main className="main">
         <Header />
-        <HomeMain />
-      </>
+        {/* <HomeMain /> */}
+        <Outlet />
+
+      </main>
     </ThemeContext.Provider >
   )
 }
