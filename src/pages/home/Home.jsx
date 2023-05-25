@@ -1,57 +1,47 @@
-import { useState, useEffect, } from "react";
 import Tab from '../../components/Tab'
-import Card from "../../components/Card";
-import { connect } from "react-redux";
-import { getArticles } from "../../store/action.js";
+import HomeRecommend from './HomeDefault';
+import { Outlet, useLocation } from "react-router-dom";
 
 
-const tabListNoTitle = [
+const tabList = [
   {
-    tab: '关注',
-    key: 'concern',
+    label: '关注',
+    path: 'follow',
+    mark: 1
   },
   {
-    tab: '推荐',
-    key: 'recommend',
+    label: '推荐',
+    path: '',
+    mark: 0
   },
   {
-    tab: '热榜',
-    key: 'hot',
+    label: '热榜',
+    path: 'hot',
+    mark: 2
+  },
+  {
+    label: '最新',
+    path: 'latest',
+    mark: 3
   }
 ];
 
+const tabListWithRoute = tabList.map((item) => {
+  console.log(item, item.path, 'asfdsafda');
+  item.path = `/${item.path}`
+  return item
+})
+
 const Home = (props) => {
-  const { dispatch, articles } = props
-  const [activeTabKey, setActiveTabKey] = useState('recommend');
+  const location = useLocation();
 
-  useEffect(() => {
-    dispatch(getArticles())
-  }, [])
-
-  const contentListNoTitle = {
-    concern: <div>{articles.map(item => <Card key={item.id} detail={item}></Card>)}</div>,
-    recommend: <div>{articles.map(item => <Card key={item.id} detail={item}></Card>)}</div>,
-    hot: <div>{articles.map(item => <Card key={item.id} detail={item}></Card>)}</div>,
-  };
-
-  const onTabChange = (key) => {
-    setActiveTabKey(key);
-  }
   return (
     <>
-      <Tab
-        tabList={tabListNoTitle}
-        activeTabKey={activeTabKey}
-        onTabChange={onTabChange}
-      >
-      </Tab>
-      {contentListNoTitle[activeTabKey]}
+      <Tab tabList={tabListWithRoute}></Tab>
+      {location.pathname === '/' && <HomeRecommend />}
+      <Outlet />
     </>
   )
 }
 
-const mapStateToProps = (state) => ({
-  articles: state.present.articles
-})
-
-export default connect(mapStateToProps)(Home)
+export default Home

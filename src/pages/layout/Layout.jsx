@@ -5,7 +5,6 @@ import WritingCenter from "../../components/WritingCenter";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 
-
 const Nest = (props) => {
   const [theme, setTheme] = useState('light')
 

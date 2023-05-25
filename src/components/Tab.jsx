@@ -1,18 +1,24 @@
-import { memo } from "react"
+import { memo, useMemo } from "react"
+import { NavLink } from "react-router-dom"
 import styles from './component.module.scss'
 
-const Card = memo((props) => {
-  const { tabList, activeTabKey, onTabChange } = props
+const Tab = memo((props) => {
+  const { tabList } = props
+
+  const activeClassName = ({ isAcitve }) => isAcitve ? styles.t_light : styles.t_dark
+
   return (
     <div className={styles.tab}>
       {
-        tabList.map(item => {
-          return (<a className={item.key === activeTabKey ? styles.t_light : styles.t_dark} key={item.key} onClick={() => onTabChange(item.key)} href="javascript:;">{item.tab}</a>)
-        })
+        tabList.map(item => <NavLink
+          className={activeClassName}
+          key={item.mark}
+          to={item.path}
+          // state={{ mark: item.mark }}
+        >{item.label}</NavLink>)
       }
-    </div>
+    </div >
   )
 })
 
-
-export default Card
+export default Tab
